@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">    
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    
+    <style type="text/css">
+		table.gridtable {
+			font-family: verdana,arial,sans-serif;
+			font-size:11px;
+			color:#333333;
+			border-width: 1px;
+			border-color: #666666;
+			border-collapse: collapse;
+			width : 100%;
+		}
+		table.gridtable th {
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #666666;
+			background-color: #dedede;
+		}
+		table.gridtable td {
+			border-width: 1px;
+			padding: 8px;
+			border-style: solid;
+			border-color: #666666;
+			background-color: #ffffff;
+		}
+</style>
+</head>
+
+<body>
+	<header>
+		<div class="container" id="cats">
+		<h3>Predicted Categories </h3>		
+	    </div>
+	</header>
+    <table class="gridtable">
+       <tr>
+          <th>TOXIC</th>
+          <th>SEVERE TOXIC</th> 
+          <th>OBSCENE</th>
+          <th>THREAT</th>
+          <th>INSULT</th>
+          <th>IDENTITY HATE</th>
+       </tr>
+       <tr>
+       	  <!-- Toxic  -->
+       	  {% if prediction[0] == 1%}
+          <td>1</td>
+          {% elif prediction[0] == 0%}
+          <td>0</td>
+          {% endif %}
+          <!-- Severe Toxic  -->
+          {% if prediction[1] == 1%}
+          <td>1</td>
+          {% elif prediction[1] == 0%}
+          <td>0</td>
+          {% endif %}
+          <!-- Obscene  -->
+          {% if prediction[2] == 1%}
+          <td>1</td>
+          {% elif prediction[2] == 0%}
+          <td>0</td>
+          {% endif %}
+          <!-- Threat  -->
+          {% if prediction[3] == 1%}
+          <td>1</td>
+          {% elif prediction[3] == 0%}
+          <td>0</td>
+          {% endif %}
+          <!-- Insult  -->
+          {% if prediction[4] == 1%}
+          <td>1</td>
+          {% elif prediction[4] == 0%}
+          <td>0</td>
+          {% endif %}
+          <!-- Identity hate  -->
+          {% if prediction[5] == 1%}
+          <td>1</td>
+          {% elif prediction[5] == 0%}
+          <td>0</td>
+          {% endif %}
+       </tr>
+    </table>
+
+</body>
+</html>

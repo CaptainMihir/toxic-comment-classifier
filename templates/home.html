@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Toxic Comment Classifier Interface</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->	
+	<!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/fonts/Anton-Regular.ttf">
+    <link rel="stylesheet" href="../static/fonts/Pacifico-Regular.ttf">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+	
+
+</head>
+<body>
+	<header>
+		<div class="container" style="font-family: 'Anton', serif, font-size: large, font-weight:bold;">		
+		<h2>Toxic Comment Classifier </h2>		
+	    </div>	    
+	</header>
+	
+	<div class="ml-container form-group shadow-textarea">
+
+		<form action="http://localhost:5000/predict" method="POST">
+		<textarea class="form-control z-depth-1" placeholder="Enter Your Comment Here....... " name="message" rows="4" cols="50" ></textarea>
+		<br/>
+
+		<input type="submit" class="btn btn-primary btn-lg" value="PREDICT" style="font-family: Garamond;">		
+	    </form>
+		
+	</div>
+	<footer>
+		<div id="footer">
+	        <h5 style="font-family: 'Pacifico',cursive;">Made with <i class="em em-heartpulse"></i> using Flask</h5>		      	
+		</div>			    
+	</footer>
+</body>
+</html>
+
+
